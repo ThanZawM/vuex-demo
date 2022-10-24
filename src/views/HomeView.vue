@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PersonListOne :persons="persons">
+    </PersonListOne>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PersonListOne from '@/components/PersonListOne.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'HomeView',
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    // persons() {
+    //   return this.$store.getters.persons
+
+    // }
+    ...mapGetters([
+      'persons'
+    ])
+  },
   components: {
-    HelloWorld
-  }
+    PersonListOne,
+  },
+
 }
 </script>
