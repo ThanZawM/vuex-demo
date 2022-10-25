@@ -18,7 +18,17 @@ export default new Vuex.Store({
       })  
     }
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    addPerson:(state, payload) => {
+      state.persons.push(payload)
+    }
+  },
+  actions: {
+    addPerson(context, payload) {
+      setTimeout(() => {
+        context.commit('addPerson', payload)
+      }, 2000)
+    }
+  },
   modules: {},
 });
