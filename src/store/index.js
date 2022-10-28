@@ -11,7 +11,7 @@ export default new Vuex.Store({
       { name: "hla hla", city: "pyin oo lwin" },
     ],
   },
-  getters: {
+  getters: {  
     persons:(state) => {
       return state.persons.map((p)=>{
         return {name: p.name + "**", city: p.city}
